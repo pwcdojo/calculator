@@ -1,0 +1,11 @@
+MojKalkulator mk = new MojKalkulator();
+
+mk.ustawA(13);
+mk.ustawB(0);
+
+System.debug('NASZ WYNIK : ' + mk.dzielenieLiczby());
+
+
+mk.ustawB(2);
+
+System.debug('NASZ WYNIK : ' + mk.dzielenieLiczby());

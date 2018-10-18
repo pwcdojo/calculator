@@ -1,0 +1,45 @@
+public class MojKalkulator {
+    
+    // TYPY Zmiennych:
+    // Integer - liczby naturalne, 1 2 3 
+    // String - teksty
+    // Boolean - prawda/falsz, true/false, 0/1
+    // Decimal - 1.2, 3.3
+
+    Decimal liczbaA;
+    Decimal liczbaB;
+    Decimal wynik;
+    
+    public void ustawA(Decimal a) {
+        liczbaA = a;
+    }
+    
+    public void ustawB(Decimal b) {
+        liczbaB = b;
+    }
+        
+    public Decimal dodajLiczby() {
+        wynik = liczbaA + liczbaB;
+        return wynik; 
+    }
+ 
+    public Decimal odejmijLiczby() {
+        wynik = liczbaA - liczbaB;
+        return wynik; 
+    }
+
+    public Decimal pomnozLiczby() {
+        wynik = liczbaA * liczbaB;
+        return wynik; 
+    }
+ 
+    public Decimal dzielenieLiczby() {
+        if (liczbaB == 0) {
+            System.debug('CO TY ROBISZ ?! Nie dzielimy przez 0 !');
+            return -1;
+        }
+        
+        wynik = liczbaA / liczbaB;
+        return wynik.setScale(2); // zaokraglenie do 2 miejsc po przecinku
+    }   
+}
