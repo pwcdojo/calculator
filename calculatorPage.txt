@@ -1,0 +1,20 @@
+<apex:page showHeader="false" 
+  docType="html-5.0" 
+  controller="MojKalkulator">
+
+<apex:form >
+
+  Liczba A: <apex:input type="number" value="{!liczbaA}" id="pierwszaLiczba"/> <br/>
+  Liczba B: <apex:input type="number" value="{!liczbaB}" id="drugaLiczba"/> <br/><br/>
+
+  <apex:commandButton action="{!dodaj}" value="+" id="plusPrzycisk"/>
+  <apex:commandButton action="{!odejmij}" value="-" id="minusPrzycisk"/>
+  <apex:commandButton action="{!pomnoz}" value="*" id="mnozPrzycisk"/>
+  <apex:commandButton action="{!podziel}" value="/" id="dzielPrzycisk"/>
+   
+  <br/><br/>
+  
+  Wynik : <apex:outputText value="{!wynik}" id="wynikOperacji" /> 
+  
+</apex:form> 
+</apex:page>

@@ -6,33 +6,62 @@ public class MojKalkulator {
     // Boolean - prawda/falsz, true/false, 0/1
     // Decimal - 1.2, 3.3
 
-    Decimal liczbaA;
-    Decimal liczbaB;
-    Decimal wynik;
+    // adnotacja public - zmienna lub metoda jest dostepna z innych miejsc, np z widoku
+    // adnotacja private - zmienna lub metoda nie jest dostepna z innych miejsc, tylko w tej klasie
+
+    // get i set pozwalaja odczytywac i ustawiac wartosci przez strone
+    public Decimal liczbaA {get; set;}
+    public Decimal liczbaB {get; set;}
+    public Decimal wynik {get; set;}
     
-    public void ustawA(Decimal a) {
-        liczbaA = a;
+    // metoda uzywana na stronie pod przyciskiem
+    public void dodaj() {
+        wynik = liczbaA + liczbaB;
+    }
+
+    // metoda uzywana na stronie pod przyciskiem
+    public void odejmij() {
+        wynik = liczbaA - liczbaB;
+    }
+
+    // metoda uzywana na stronie pod przyciskiem
+    public void pomnoz() {
+        wynik = liczbaA * liczbaB;
+    }
+
+    // metoda uzywana na stronie pod przyciskiem
+    public void podziel() {
+        if (liczbaB == 0) {
+            wynik = -1;
+            return;
+        }
+
+        wynik = liczbaA / liczbaB;
     }
     
-    public void ustawB(Decimal b) {
-        liczbaB = b;
-    }
-        
+    /**********************************************/
+    /***** Stare metody przed dodaniem widoku *****/
+    /**********************************************/
+
+    //stara wersja metody
     public Decimal dodajLiczby() {
         wynik = liczbaA + liczbaB;
         return wynik; 
     }
- 
+
+    //stara wersja metody
     public Decimal odejmijLiczby() {
         wynik = liczbaA - liczbaB;
         return wynik; 
     }
 
+    //stara wersja metody
     public Decimal pomnozLiczby() {
         wynik = liczbaA * liczbaB;
         return wynik; 
     }
- 
+
+    //stara wersja metody
     public Decimal dzielenieLiczby() {
         if (liczbaB == 0) {
             System.debug('CO TY ROBISZ ?! Nie dzielimy przez 0 !');
@@ -41,5 +70,5 @@ public class MojKalkulator {
         
         wynik = liczbaA / liczbaB;
         return wynik.setScale(2); // zaokraglenie do 2 miejsc po przecinku
-    }   
+    }
 }
